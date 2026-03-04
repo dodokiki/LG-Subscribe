@@ -1,0 +1,13 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "rewrites": [
+    { "source": "/styles.css", "destination": "/dashboard/public/styles.css" },
+    { "source": "/script.js", "destination": "/dashboard/public/script.js" },
+    { "source": "/products.html", "destination": "/dashboard/public/products.html" },
+    { "source": "/products.css", "destination": "/dashboard/public/products.css" },
+    { "source": "/products.js", "destination": "/dashboard/public/products.js" },
+    { "source": "/data/:path*", "destination": "/dashboard/public/data/:path*" },
+    { "source": "/index.html", "destination": "/dashboard/public/index.html" },
+    { "source": "/", "destination": "/dashboard/public/index.html" }
+  ]
+}
