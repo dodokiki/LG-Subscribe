@@ -39,6 +39,7 @@ function applyLineOaCtaLinks() {
   ].join(",");
 
   document.querySelectorAll(ctaSelector).forEach((el) => {
+    if (el.classList.contains("js-products-link")) return;
     el.setAttribute("href", LINE_OA_URL);
     el.setAttribute("target", "_blank");
     el.setAttribute("rel", "noopener noreferrer");
