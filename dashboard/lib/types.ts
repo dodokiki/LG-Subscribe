@@ -1,12 +1,12 @@
 export type ProductStatus = "active" | "draft"
 
-export type ProductCategory =
-  | "Air Purifier"
-  | "Fridge"
-  | "Washing Machine"
-  | "TV"
-  | "Air Conditioner"
-  | "Other"
+export type ProductCategory = string
+
+export interface Category {
+  id: string
+  name: string
+  createdAt?: string
+}
 
 export interface SubscriptionTier {
   id: string

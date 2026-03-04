@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>สินค้าทั้งหมด | LG Subscribe</title>
+  <meta
+    name="description"
+    content="รวมสินค้าทั้งหมดของ LG Subscribe แยกตามหมวด พร้อมราคาเริ่มต้นและปุ่มรับข้อเสนอ"
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="products.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="index.html">LG Subscribe</a>
+      <nav class="top-actions">
+        <a href="/index.html">กลับหน้าหลัก</a>
+        <a class="btn btn-primary" href="#lead">รับข้อเสนอ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <p class="kicker">ALL PRODUCTS</p>
+        <h1>สินค้าทั้งหมด แยกตามหมวด เลือกง่าย ตัดสินใจไว</h1>
+        <p class="lead">อัปเดตรายการจริงจากระบบ พร้อมจำนวนสินค้าในแต่ละหมวดและราคาเริ่มต้นต่อเดือน</p>
+        <div class="stats">
+          <div class="stat">
+            <strong id="totalProducts">0</strong>
+            <span>รายการทั้งหมด</span>
+          </div>
+          <div class="stat">
+            <strong id="totalCategories">0</strong>
+            <span>หมวดสินค้า</span>
+          </div>
+          <div class="stat">
+            <strong id="startPrice">-</strong>
+            <span>ราคาเริ่มต้น/เดือน</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="view-toggle" role="tablist" aria-label="สลับมุมมองรายการ">
+          <button type="button" class="view-btn active" data-view="category" aria-selected="true">ดูตามหมวด</button>
+          <button type="button" class="view-btn" data-view="price" aria-selected="false">ดูตามราคา (หลายตัวราคาเดียวกัน)</button>
+        </div>
+        <div id="categorySections"></div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="lead">
+      <div class="container narrow">
+        <p class="kicker">CTA</p>
+        <h2>อยากได้ข้อเสนอที่คุ้มและตรงกับการใช้งานจริง?</h2>
+        <p class="lead-copy">
+          ทักหาเราได้เลย ทีมงานช่วยเทียบรุ่นให้ตามงบและความต้องการของคุณแบบตรงจุด
+          พร้อมสรุปค่าใช้จ่ายรายเดือนให้เห็นชัดก่อนตัดสินใจ
+        </p>
+        <div class="lead-points">
+          <p>ช่วยคัดรุ่นที่เหมาะกับบ้านและไลฟ์สไตล์ของคุณ</p>
+          <p>เปรียบเทียบราคาและแพ็กเกจให้จบในแชทเดียว</p>
+          <p>ตอบไว และแนะนำขั้นตอนเริ่ม Subscribe แบบเข้าใจง่าย</p>
+        </div>
+        <a class="btn btn-primary full lead-contact-link" href="#">ทักมาคุยกับทีมงานตอนนี้</a>
+      </div>
+    </section>
+  </main>
+
+  <div class="sticky-cta">
+    <p>อยากได้ดีลที่คุ้มที่สุดสำหรับบ้านคุณ?</p>
+    <a class="btn btn-primary" href="#lead">คุยกับทีมงานตอนนี้</a>
+  </div>
+
+  <script src="products.js"></script>
+</body>
+</html>

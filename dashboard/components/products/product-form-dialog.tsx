@@ -12,7 +12,6 @@ import {
   defaultProductFormValues,
 } from "@/lib/validations"
 import {
-  PRODUCT_CATEGORIES,
   SERVICE_FREQUENCY_OPTIONS,
   CONTRACT_YEAR_OPTIONS,
   FEATURE_TAG_OPTIONS,
@@ -41,6 +40,7 @@ interface ProductFormDialogProps {
   open: boolean
   onOpenChange: (open: boolean) => void
   product: Product | null
+  categories: string[]
   onSubmit: (values: ProductFormValues) => void
 }
 
@@ -66,6 +66,7 @@ export function ProductFormDialog({
   open,
   onOpenChange,
   product,
+  categories,
   onSubmit,
 }: ProductFormDialogProps) {
   const isEdit = !!product
@@ -80,10 +81,13 @@ export function ProductFormDialog({
       if (product) {
         form.reset(productToFormValues(product))
       } else {
-        form.reset(defaultProductFormValues)
+        form.reset({
+          ...defaultProductFormValues,
+          category: categories[0] ?? "",
+        })
       }
     }
-  }, [open, product, form])
+  }, [open, product, form, categories])
 
   const tiers = form.watch("subscriptionTiers")
   const selectedTags = form.watch("featureTags")
@@ -171,7 +175,7 @@ export function ProductFormDialog({
                 <SelectValue placeholder="Select category" />
               </SelectTrigger>
               <SelectContent>
-                {PRODUCT_CATEGORIES.map((cat) => (
+                {categories.map((cat) => (
                   <SelectItem key={cat} value={cat}>
                     {cat}
                   </SelectItem>

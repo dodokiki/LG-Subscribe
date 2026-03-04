@@ -1,9 +1,5 @@
 import { z } from "zod"
-import {
-  CONTRACT_YEAR_OPTIONS,
-  SERVICE_FREQUENCY_OPTIONS,
-  PRODUCT_CATEGORIES,
-} from "./types"
+import { CONTRACT_YEAR_OPTIONS, SERVICE_FREQUENCY_OPTIONS } from "./types"
 
 const subscriptionTierSchema = z.object({
   id: z.string(),
@@ -12,13 +8,11 @@ const subscriptionTierSchema = z.object({
   serviceFrequency: z.string().min(1, "Required"),
 })
 
-const categoryEnum = z.enum(PRODUCT_CATEGORIES as unknown as [string, ...string[]])
-
 export const productFormSchema = z.object({
   name: z.string().min(1, "Product name is required"),
   modelNumber: z.string().min(1, "Model number is required"),
   description: z.string(),
-  category: categoryEnum,
+  category: z.string().min(1, "Select a category"),
   imageUrl: z.string().nullable(),
   featureTags: z.array(z.string()),
   status: z.enum(["active", "draft"]),
@@ -40,7 +34,7 @@ export const defaultProductFormValues: ProductFormValues = {
   name: "",
   modelNumber: "",
   description: "",
-  category: "Fridge",
+  category: "",
   imageUrl: null,
   featureTags: [],
   status: "draft",
