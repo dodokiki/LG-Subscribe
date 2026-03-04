@@ -16,9 +16,19 @@ function LoginForm() {
   const [loading, setLoading] = useState(false)
   const [redirecting, setRedirecting] = useState(false)
 
+  const hasEnv =
+    typeof process.env.NEXT_PUBLIC_SUPABASE_URL === "string" &&
+    process.env.NEXT_PUBLIC_SUPABASE_URL.length > 0 &&
+    typeof process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY === "string" &&
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY.length > 0
+
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
     setError(null)
+    if (!hasEnv) {
+      setError("กรุณาตั้งค่า Environment Variables บน Vercel (NEXT_PUBLIC_SUPABASE_URL, NEXT_PUBLIC_SUPABASE_ANON_KEY)")
+      return
+    }
     setLoading(true)
     try {
       const supabase = createClient()
@@ -53,6 +63,11 @@ function LoginForm() {
           <p className="mt-1 text-sm text-muted-foreground">
             LG Subscribe – เข้าสู่ระบบเพื่อจัดการสินค้า
           </p>
+          {!hasEnv && (
+            <p className="mt-2 text-xs text-amber-600 dark:text-amber-400">
+              ยังไม่ได้ตั้งค่า Supabase บน Vercel → Settings → Environment Variables
+            </p>
+          )}
         </div>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="space-y-2">

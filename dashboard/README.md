@@ -71,7 +71,7 @@ npm run dev
 
 ## 4. Vercel
 
-- ตั้ง **Root Directory** = `dashboard`
+- ตั้ง **Root Directory** = `dashboard` (ถ้าเข้า `/login` ไม่ได้หรือได้ 404 แสดงว่ายังไม่ได้ตั้ง Root Directory)
 - ใน Vercel Project → **Settings** → **Environment Variables** ใส่  
   `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, `SUPABASE_SERVICE_ROLE_KEY`  
   (ค่าเดียวกับใน `.env.local`)

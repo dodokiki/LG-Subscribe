@@ -7,6 +7,9 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "LG Subscribe – Product Management",
   description: "Product Management Dashboard for LG Subscribe platform",
+  icons: {
+    icon: "/images/lg-logo.png",
+  },
 }
 
 export default function RootLayout({

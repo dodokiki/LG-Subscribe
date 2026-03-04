@@ -137,9 +137,16 @@ h2 {
 }
 
 .logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   font-size: 1.28rem;
   font-weight: 800;
   letter-spacing: 0.2px;
+}
+.logo-icon {
+  flex-shrink: 0;
+  display: block;
 }
 
 .nav-links {

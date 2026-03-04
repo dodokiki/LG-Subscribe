@@ -38,10 +38,17 @@ body {
   gap: 12px;
 }
 .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   text-decoration: none;
   color: var(--text);
   font-weight: 800;
   font-size: 1.2rem;
+}
+.brand-logo {
+  flex-shrink: 0;
+  display: block;
 }
 .top-actions { display: flex; align-items: center; gap: 14px; }
 .top-actions a {

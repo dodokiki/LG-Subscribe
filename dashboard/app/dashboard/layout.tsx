@@ -21,7 +21,11 @@ export default function DashboardLayout({
     <div className="min-h-screen bg-background">
       <div className="mx-auto flex max-w-7xl">
         <aside className="hidden w-64 border-r bg-muted/20 p-4 md:block">
-          <p className="mb-4 px-2 text-sm font-semibold text-muted-foreground">
+          <Link href="/dashboard" className="mb-4 flex items-center gap-2 px-2">
+            <img src="/images/lg-logo.png" alt="LG" className="h-8 w-8" />
+            <span className="text-sm font-semibold text-foreground">LG Subscribe</span>
+          </Link>
+          <p className="mb-4 px-2 text-xs font-medium text-muted-foreground">
             Backoffice
           </p>
           <nav className="space-y-1">
